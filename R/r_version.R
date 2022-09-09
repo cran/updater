@@ -38,6 +38,8 @@ previous_r_version <- function() {
       ),
       1
     )
+  # keeping folder names that adhere to the install folder naming convention
+  r_version <- r_version[startsWith(tolower(r_version), "r-")]
 
   # if couldn't find previous installation, return NULL ------------------------
   if (is_empty(r_version)) {
